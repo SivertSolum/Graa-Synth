@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CABBAGE_PRESETS>
+  <PRESET0 PresetName="ADSR, detune" presets="0" presets2="1" gain="0.5"
+           wave1="1" osGain1="0.5" detune1="0" wave2="1" osGain2="0.5" detune2="25"
+           wave3="1" osGain3="0.5" detune3="0" cutoff="20000" dist="0" att="0.75999999046325683594"
+           dec="0.40000000596046447754" sus="0.20000000298023223877" rel="0.7199999690055847168"
+           delWet="0" delay="500" delFeed="0.5" octDown1="0" octUp1="0"
+           octDown2="0" octUp2="0" octDown3="0" octUp3="0" revCut="12000"
+           feed="0.69999998807907104492" wetL="0" wetR="0"/>
+  <PRESET1 PresetName="Octaver, waveforms" presets="0" presets2="-1" gain="0.5"
+           wave1="3" osGain1="0.5" detune1="0" wave2="4" osGain2="0.5" detune2="0"
+           wave3="1" osGain3="0.5" detune3="0" cutoff="20000" dist="0" att="0.23999999463558197021"
+           dec="0.40000000596046447754" sus="0.20000000298023223877" rel="0.20999999344348907471"
+           delWet="0" delay="500" delFeed="0.5" octDown1="2" octUp1="0"
+           octDown2="0" octUp2="4" octDown3="4" octUp3="0" revCut="12000"
+           feed="0.69999998807907104492" wetL="0" wetR="0"/>
+  <PRESET2 PresetName="Reverb" presets="0" presets2="0" gain="0.5"
+           wave1="4" osGain1="0.5" detune1="0" wave2="4" osGain2="0.5" detune2="0"
+           wave3="4" osGain3="0.5" detune3="0" cutoff="20000" dist="0" att="0.23999999463558197021"
+           dec="0.40000000596046447754" sus="0.20000000298023223877" rel="0.20999999344348907471"
+           delWet="0" delay="500" delFeed="0.5" octDown1="2" octUp1="0"
+           octDown2="0" octUp2="4" octDown3="4" octUp3="0" revCut="12000"
+           feed="0.90999996662139892578" wetL="0.55000001192092895508" wetR="0.68000000715255737305"/>
+  <PRESET3 PresetName="Delay" presets="0" presets2="1" gain="0.5"
+           wave1="1" osGain1="0.5" detune1="0" wave2="1" osGain2="0.5" detune2="0"
+           wave3="1" osGain3="0.5" detune3="0" cutoff="20000" dist="0.98999994993209838867"
+           att="0.23999999463558197021" dec="0.40000000596046447754" sus="0.20000000298023223877"
+           rel="0.20999999344348907471" delWet="0.71600002050399780273"
+           delay="500" delFeed="0.5" octDown1="0" octUp1="0" octDown2="0"
+           octUp2="0" octDown3="0" octUp3="0" revCut="12000" feed="0.90999996662139892578"
+           wetL="0" wetR="0"/>
+</CABBAGE_PRESETS>

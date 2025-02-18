@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FILTERGRAPH>
+  <FILTER uid="1" x="0.4000000000000000222" y="0.10000000000000000555"
+          uiLastX="" uiLastY="">
+    <PLUGIN name="Midi Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="cb5fde0b"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="2" x="0.5999999999999999778" y="0.10000000000000000555"
+          uiLastX="" uiLastY="">
+    <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="246006c0"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="2" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="3" x="0.5" y="0.80000000000000004441" uiLastX="" uiLastY="">
+    <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="724248cb"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="2"
+            numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="130" x="0.4500000000000000111" y="0.5" uiLastX="" uiLastY="">
+    <PLUGIN name="Cabbage" descriptiveName="Cabbage:C:\Users\siver\Desktop\graasynth.csd"
+            format="Cabbage" category="" manufacturer="CabbageAudio" version=""
+            file="C:\Users\siver\Desktop\graasynth.csd" uid="82"
+            isInstrument="1" fileTime="0" infoUpdateTime="0" numInputs="2"
+            numOutputs="2" isShell="0"/>
+    <STATE>85.VMjLgvD....OCEjPBEzQE8ETRUzTEQ0T9vCTRUzTEQELf.kbkMWYz4TXsUVOhLTPBITPGUzWPIUQSUDUSABLh7hO77xPAIjPAcTQeAkTEMUQTMkO..</STATE>
+  </FILTER>
+  <CONNECTION srcFilter="1" srcChannel="4096" dstFilter="130" dstChannel="4096"/>
+  <CONNECTION srcFilter="2" srcChannel="0" dstFilter="130" dstChannel="0"/>
+  <CONNECTION srcFilter="2" srcChannel="1" dstFilter="130" dstChannel="1"/>
+  <CONNECTION srcFilter="130" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="130" srcChannel="1" dstFilter="3" dstChannel="1"/>
+</FILTERGRAPH>
