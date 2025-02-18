@@ -1,70 +1,61 @@
-<Cabbage> bounds(0, 0, 0, 0)
-form caption("Graa Synth") size(600, 460), colour(200, 200, 200), pluginId("def1")
-
-// GUI Modules
-groupbox bounds(14, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 1")
-groupbox bounds(160, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 2")
-groupbox bounds(306, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 3")
-groupbox bounds(14, 143, 292, 82), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator settings")
-
-groupbox bounds(452, 143, 138, 213), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255), text("Master")
-groupbox bounds(452, 14,  138, 129), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255), text("Presets")
-
-groupbox bounds(14, 225, 146, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Delay")
-groupbox bounds(160, 225, 146, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Stereo Reverb")
-groupbox bounds(306, 143, 146, 212), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Octaver")
+<Cabbage>
+form caption("Graa Synth"), size(605, 505), colour(200, 200, 200), pluginId("def1"), style("flat")
 
 // Keyboard
-keyboard bounds(14, 356, 576, 94), middleC(3), keyWidth(25), value(48), scrollbars(0), mouseOverKeyColour(100, 100, 100, 255)
-
-// Presets
-filebutton bounds(482, 84, 75, 20), channel("presets"), populate("*.snaps"), text("Save", "Save"), mode("save")
-filebutton bounds(482, 110, 75, 20), channel("presets1"), populate("*.snaps"), text("Load", "Load")
-combobox bounds(464, 42, 115, 30), channel("presets2"), populate("*.snaps"), text("Presets")
-
-// Master gain
-vslider bounds(481, 170, 80, 178), channel("gain"), range(0, 1, 0.5, 1, 0.01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+keyboard bounds(14, 356, 576, 134), middleC(3), keyWidth(25), value(48), scrollbars(0), mouseOverKeyColour(100, 100, 100, 255)
 
 // Oscillator 1
-combobox bounds(30, 42, 115, 30), channel("wave1"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
-rslider bounds(30, 82, 50, 50), channel("osGain1"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(94, 82, 50, 50), channel("detune1"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+groupbox bounds(14, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 1")
+combobox bounds(30, 42, 160, 30), channel("wave1"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
+rslider bounds(14, 82, 64, 55), channel("osGain1"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Gain => ")
+rslider bounds(78, 82, 64, 55), channel("detune1"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Detune => ")
+rslider bounds(142, 82, 64, 55), channel("octave1"), range(-4, 4, 0, 1, 2), text("Oscillator 1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Octave => ")
 
 // Oscillator 2
-combobox bounds(176, 42, 115, 30), channel("wave2"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
-rslider bounds(176, 82, 50, 50), channel("osGain2"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(240, 82, 50, 50), channel("detune2"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+groupbox bounds(206, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 2")
+combobox bounds(222, 42, 160, 30), channel("wave2"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
+rslider bounds(206, 82, 64, 55), channel("osGain2"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Gain => ")
+rslider bounds(270, 82, 64, 55), channel("detune2"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Detune => ")
+rslider bounds(334, 82, 64, 55), channel("octave2"), range(-4, 4, 0, 1, 2), text("Oscillator 2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Octave => ")
 
 // Oscillator 3
-combobox bounds(322, 42, 115, 30), channel("wave3"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
-rslider bounds(322, 82, 50, 50), channel("osGain3"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(386, 82, 50, 50), channel("detune3"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-
-// Low-Pass & Distortion
-rslider bounds(242, 170, 50, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1), text("LP Filter"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour("black")
-rslider bounds(192, 170, 50, 50), channel("distortion"), range(0, 1, 0, 1, .01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour("black")
+groupbox bounds(398, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 3")
+combobox bounds(414, 42, 160, 30), channel("wave3"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
+rslider bounds(398, 82, 64, 55), channel("osGain3"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Gain => ")
+rslider bounds(462, 82, 64, 55), channel("detune3"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Detune => ")
+rslider bounds(526, 82, 64, 55), channel("octave3"), range(-4, 4, 0, 1, 2), text("Oscillator 3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Octave => ")
 
 // ADSR
-rslider bounds(16, 170, 50, 50), channel("attack"), range(0, 1, 0.1, 1, 0.01), text("Attack"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(58, 170, 50, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("Decay"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(100, 170, 50, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("Sustain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(142, 170, 50, 50), channel("release"), range(0, 1, 0.1, 1, 0.01), text("Release"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+groupbox bounds(14, 143, 320, 82), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("ADSR")
+rslider bounds(14, 166, 64, 50), channel("attack"), range(0, 1, 0.1, 1, 0.01), text("Attack"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Attack => ")
+rslider bounds(103, 166, 64, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("Decay"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Decay => ")
+rslider bounds(167, 166, 64, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("Sustain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Sustain => ")
+rslider bounds(270, 166, 64, 50), channel("release"), range(0, 1, 0.1, 1, 0.01), text("Release"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Release => ")
+
+// WIP
+groupbox bounds(334, 143, 160, 82), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("WIP")
 
 // Delay
-rslider bounds(63, 250, 50, 50), channel("delWet"), range(0, .9, 0, 1, 0.001), text("Dry/Wet"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(30, 300, 50, 50), channel("delay"), range(1, 2000, 500, 1, 1), text("Time"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(96, 300, 50, 50), channel("delFeed"), range(0, 0.99, 0.5, 1, 0.01), text("Feedback"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-
-// Octaver
-rslider bounds(350, 172, 60, 50), channel("octave1"), range(-4, 4, 0, 1, 2), text("Oscillator 1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(350, 234, 60, 50), channel("octave2"), range(-4, 4, 0, 1, 2), text("Oscillator 2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(350, 296, 60, 50), channel("octave3"), range(-4, 4, 0, 1, 2), text("Oscillator 3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+groupbox bounds(14, 225, 160, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Delay")
+rslider bounds(62, 248, 64, 50), channel("delWet"), range(0, 0.9, 0, 1, 0.001), text("Dry/Wet"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Delay Dry/Wet => ")
+rslider bounds(20, 300, 64, 50), channel("delay"), range(1, 2000, 500, 1, 1), text("Time"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Delay Time => ")
+rslider bounds(104, 300, 64, 50), channel("delFeed"), range(0, 0.99, 0.5, 1, 0.01), text("Feedback"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Delay Feedback => ")
 
 // Reverb
-rslider bounds(176, 302, 50, 50), channel("revCut"), range(1, 21000, 12000, 1, 10), text("Cut Off"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(240, 302, 50, 50), channel("feed"), range(0, 0.99, 0.7, 1, .01), text("Roomsize"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(176, 250, 50, 50), channel("wetL"), range(0, 1, 0, 1, .01), text("Dry/Wet L"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(240, 250, 50, 50), channel("wetR"), range(0, 1, 0, 1, .01), text("Dry/Wet R"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+groupbox bounds(174, 225, 160, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Stereo Reverb")
+rslider bounds(185, 248, 64, 50), channel("wetL"), range(0, 1, 0, 1, .01), text("Dry/Wet L"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Reverb Dry/Wet L => ")
+rslider bounds(259, 248, 64, 50), channel("wetR"), range(0, 1, 0, 1, .01), text("Dry/Wet R"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Reverb Dry/Wet R => ")
+rslider bounds(185, 302, 64, 50), channel("revCut"), range(1, 21000, 12000, 1, 10), text("Cut Off"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Reverb Cut Off => ")
+rslider bounds(259, 302, 64, 50), channel("feed"), range(0, 0.99, 0.7, 1, .01), text("Roomsize"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Reverb Roomsize => ")
+
+// Low-Pass & Distortion
+groupbox bounds(334, 225, 160, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Distortion & LP-Filter")
+rslider bounds(434, 294, 64, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1), text("LP Filter"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Low-Pass Cutoff Frequency => ")
+rslider bounds(344, 294, 64, 50), channel("distortion"), range(0, 1, 0, 1, 0.01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Distortion Level => ")
+
+// Master gain
+groupbox bounds(494, 143, 96, 213), colour(80, 80, 80, 255), fontColour(0, 0, 0, 255), text("Master")
+vslider bounds(502, 170, 80, 178), channel("gain"), range(0, 1, 0.5, 1, 0.01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Master Volume => ")
 </Cabbage>
 
 
@@ -82,14 +73,14 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 
-// Globale variables for storing audio
+// Global variables for writing and reading audio
 gaMaster init  0
 gaPass   init  0
 gaDelay  init  0
 gaRevL   init  0
 gaRevR   init  0
 
-// Function tables for ocsillator waveforms => Sine, Saw, Square, Triangle
+// Function tables for oscillator waveforms => Sine, Saw, Square, Triangle
 giSine	 ftgen	1, 0, 4096, 10, 1
 giSaw	 ftgen	2, 0, 4096, 10, 1, 1/2, 1/3, 1/4, 1/5,  1/6, 1/7,  1/8, 1/9,  1/10, 1/11
 giSquar  ftgen	3, 0, 4096, 10, 1, 0,   1/3, 0,   1/5,  0,   1/7,  0,   1/9,  0,    1/11
@@ -102,28 +93,28 @@ giDist	 ftgen	5, 0, 257,  9, .5, 1,   270
 // ----- MAIN -----
 instr 1
     // Import data from sliders
-    iAtt     chnget  "attack"
-    iDec     chnget  "decay"
-    iSus     chnget  "sustain"
-    iRel     chnget  "release"
+    iAtt  chnget  "attack"
+    iDec  chnget  "decay"
+    iSus  chnget  "sustain"
+    iRel  chnget  "release"
 
-    kWave1   chnget  "wave1"
-    kWave2   chnget  "wave2"
-    kWave3   chnget  "wave3"
+    kWave1  chnget  "wave1"
+    kWave2  chnget  "wave2"
+    kWave3  chnget  "wave3"
 
-    kOscilGain1 chnget  "osGain1"
-    kOscilGain2 chnget  "osGain2"
-    kOscilGain3 chnget  "osGain3"
+    kOscilGain1  chnget  "osGain1"
+    kOscilGain2  chnget  "osGain2"
+    kOscilGain3  chnget  "osGain3"
 
-    kDist    chnget  "distortion"
+    kDist  chnget  "distortion"
 
-    kTune1   chnget  "detune1"
-    kTune2   chnget  "detune2"
-    kTune3   chnget  "detune3"
+    kTune1  chnget  "detune1"
+    kTune2  chnget  "detune2"
+    kTune3  chnget  "detune3"
 
-    kOctave1 chnget  "octave1"
-    kOctave2 chnget  "octave2"
-    kOctave3 chnget  "octave3"
+    kOctave1  chnget  "octave1"
+    kOctave2  chnget  "octave2"
+    kOctave3  chnget  "octave3"
 
     iCps     cpsmidi
     iAmp     ampmidi  0.2
@@ -157,7 +148,7 @@ instr 1
         aOscil3 oscilikt iAmp, iCps + kTune3, kWave3
     endif
 
-    // Adds together the signal from all three oscillators, controlled by the individual GUI volume controls 
+    // Adds the signal from all three oscillators to master variable, gain is controlled by the individual GUI volume controls 
     aMaster = (((aOscil1 * kOscilGain1) + (aOscil2 * kOscilGain2) + (aOscil3 * kOscilGain3)) / 3) * kAmp
 
     aDistort distort aMaster, kDist, giDist
@@ -211,7 +202,7 @@ instr 99
     aTot = (aDel * kWet) + aMaster
     aPass butterlp aTot, kCut
     
-    // Output
+    // Main Output
     outs (aPass + aRevL) * abs(kGain - kRevL), (aPass + aRevR) * abs(kGain - kRevR)
 
     // Reset global variables to avoid feedback
@@ -224,8 +215,10 @@ endin
 </CsInstruments>
 
 <CsScore>
-    // Causes Csound to run for about 7000 years...
+    // Causes Csound to run for about 7000 years
     f0  z
+    
+    // Instruments run for about 10 hours
     i10 0 36000
     i20 0 36000
     i99 0 36000
