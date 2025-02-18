@@ -1,25 +1,25 @@
 <Cabbage> bounds(0, 0, 0, 0)
-form caption("Graa-Synth") size(600, 460), colour(200, 200, 200), pluginId("def1")
+form caption("Graa Synth") size(600, 460), colour(200, 200, 200), pluginId("def1")
 
 // Design
 groupbox bounds(14, 14, 146, 129), text("Oscillator 1"), colour(100, 100, 100, 255), fontColour("black")
 groupbox bounds(160, 14, 146, 129), text("Oscillator 2"), colour(100, 100, 100, 255), fontColour("black")
-groupbox bounds(306, 14, 146, 129), text("Oscillator 3"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
+groupbox bounds(306, 14, 146, 129), text("Oscillator 3"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255) channel("groupbox6")
 groupbox bounds(14, 143, 292, 82), text("Oscillator settings"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
 
-groupbox bounds(452, 143, 138, 213), text("Master"), colour(50, 50, 50, 255), fontColour(0, 0, 0, 255)
-groupbox bounds(452, 14, 138, 129), text("Presets"), colour(50, 50, 50, 255), fontColour(0, 0, 0, 255)
+groupbox bounds(452, 143, 138, 213), text("Master"), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255)
+groupbox bounds(452, 14, 138, 129), text("Presets"), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255)
 
 groupbox bounds(14, 225, 146, 130), text("Delay"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
 groupbox bounds(160, 225, 146, 130), text("Stereo Reverb"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
 groupbox bounds(306, 143, 146, 212), text("Octaver"), colour(100, 100, 100, 255), fontColour("black")
 
 // Keyboard
-keyboard bounds(14, 356, 576, 90)
+keyboard bounds(14, 356, 576, 94), middleC(3), keyWidth(25), value(48), scrollbars(0), mouseOverKeyColour(100, 100, 100, 255)
 
 // Presets
-filebutton bounds(482, 84, 75, 20), channel("presets"), text("Save", "Save"), mode("snapshot"), populate("*.snaps", "C:\Users\siver\Desktop\graasynth\presets") value(0)
-filebutton bounds(482, 110, 75, 20), channel("presets1"), text("Load", "Load"), value(0)
+filebutton bounds(482, 84, 75, 20), channel("presets"), text("Save", "Save"), mode("save"), populate("*.snaps")
+filebutton bounds(482, 110, 75, 19), channel("presets1"), text("Load", "Load"), populate("*.snaps")
 combobox bounds(464, 42, 115, 30), channel("presets2"), text("Presets"), populate("*.snaps")
 
 // Master gain
@@ -56,11 +56,11 @@ rslider bounds(30, 300, 50, 50), channel("delay"), range(1, 2000, 500, 1, 1), te
 rslider bounds(96, 300, 50, 50), channel("delFeed"), range(0, 0.99, 0.5, 1, 0.01), text("Feedback"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 
 // Octaver
-rslider bounds(320, 172, 50, 50), channel("octDown1"), range(0, 4, 0, 1, 2), text("OctDown1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(384, 172, 50, 50), channel("octUp1"), range(0, 4, 0, 1, 2), text("OctUp1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(320, 170, 50, 50), channel("octDown1"), range(0, 4, 0, 1, 2), text("OctDown1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 rslider bounds(320, 234, 50, 50), channel("octDown2"), range(0, 4, 0, 1, 2), text("OctDown2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(384, 234, 50, 50), channel("octUp2"), range(0, 4, 0, 1, 2), text("OctUp2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 rslider bounds(320, 296, 50, 50), channel("octDown3"), range(0, 4, 0, 1, 2), text("OctDown3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(384, 172, 50, 50), channel("octUp1"), range(0, 4, 0, 1, 2), text("OctUp1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(384, 234, 50, 50), channel("octUp2"), range(0, 4, 0, 1, 2), text("OctUp2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 rslider bounds(384, 296, 50, 50), channel("octUp3"), range(0, 4, 0, 1, 2), text("OctUp3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 
 // Reverb
