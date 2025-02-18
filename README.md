@@ -1,5 +1,5 @@
-# graasynth
-Graa Synth is a synthesizer written with Cabbage and Csound.
+# Graa-Synth
+Graa-Synth is a synthesizer written with Cabbage and Csound.
 
 Work-in-progress
 
@@ -11,4 +11,4 @@ Features:
 - Delay
 - Distortion
 - Filters
-- Save & load presets (currently unavailable)
+- VST3 and standalone-application formats
