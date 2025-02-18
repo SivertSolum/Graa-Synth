@@ -11,4 +11,4 @@ Features:
 - Delay
 - Distortion
 - Filters
-- Save & load presets (currently unavailable)
+- VST3 and standalone-application formats
