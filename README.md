@@ -11,4 +11,4 @@ Features:
 - Delay
 - Distortion
 - Filters
-- Save & load presets
+- Save & load presets (currently unavailable)

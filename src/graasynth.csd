@@ -203,6 +203,8 @@ instr 99
     kCut  chnget "cutoff"
     kWet  chnget "delWet"
     kCut  chnget "cutoff"
+    kRevL chnget "wetL"
+    kRevR chnget "wetR"
 
     // Henter inn lydinformasjonen fra de globale variablene
     aMaster = gaMaster
@@ -210,14 +212,12 @@ instr 99
     aRevL = gaRevL
     aRevR = gaRevR
 
-    // Legger sammen lydsignalene for prosessering gjennom et low pass filter
+    // Legger sammen lydsignalene for prosessering gjennom low pass filter
     aTot = (aDel * kWet) + aMaster
     aPass butterlp aTot, kCut
+    outs (aPass + aRevL) * (kGain - kRevL), (aPass + aRevR) * (kGain - kRevR)
 
-    outs (aPass + aRevL) * kGain, (aPass + aRevR) * kGain
-    // fout "demo.wav", 6, (aPass + aRevL) * kGain, (aPass + aRevR) * kGain
-
-    // Nullstiller de globale variablene for å unngå feed
+    // Reset global variables to avoid feedback
     gaMaster = 0
     gaRevL = 0
     gaRevR = 0
