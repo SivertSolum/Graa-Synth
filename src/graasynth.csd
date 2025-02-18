@@ -1,26 +1,26 @@
 <Cabbage> bounds(0, 0, 0, 0)
 form caption("Graa Synth") size(600, 460), colour(200, 200, 200), pluginId("def1")
 
-// Design
-groupbox bounds(14, 14, 146, 129), text("Oscillator 1"), colour(100, 100, 100, 255), fontColour("black")
-groupbox bounds(160, 14, 146, 129), text("Oscillator 2"), colour(100, 100, 100, 255), fontColour("black")
-groupbox bounds(306, 14, 146, 129), text("Oscillator 3"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255) channel("groupbox6")
-groupbox bounds(14, 143, 292, 82), text("Oscillator settings"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
+// Moduler
+groupbox bounds(14, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 1")
+groupbox bounds(160, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 2")
+groupbox bounds(306, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 3")
+groupbox bounds(14, 143, 292, 82), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator settings")
 
-groupbox bounds(452, 143, 138, 213), text("Master"), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255)
-groupbox bounds(452, 14, 138, 129), text("Presets"), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255)
+groupbox bounds(452, 143, 138, 213), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255), text("Master")
+groupbox bounds(452, 14,  138, 129), colour(75, 75, 75, 255), fontColour(0, 0, 0, 255), text("Presets")
 
-groupbox bounds(14, 225, 146, 130), text("Delay"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
-groupbox bounds(160, 225, 146, 130), text("Stereo Reverb"), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255)
-groupbox bounds(306, 143, 146, 212), text("Octaver"), colour(100, 100, 100, 255), fontColour("black")
+groupbox bounds(14, 225, 146, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Delay")
+groupbox bounds(160, 225, 146, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Stereo Reverb")
+groupbox bounds(306, 143, 146, 212), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Octaver")
 
 // Keyboard
 keyboard bounds(14, 356, 576, 94), middleC(3), keyWidth(25), value(48), scrollbars(0), mouseOverKeyColour(100, 100, 100, 255)
 
 // Presets
-filebutton bounds(482, 84, 75, 20), channel("presets"), text("Save", "Save"), mode("save"), populate("*.snaps")
-filebutton bounds(482, 110, 75, 19), channel("presets1"), text("Load", "Load"), populate("*.snaps")
-combobox bounds(464, 42, 115, 30), channel("presets2"), text("Presets"), populate("*.snaps")
+filebutton bounds(482, 84, 75, 20), channel("presets"), populate("*.snaps"), text("Save", "Save"), mode("save")
+filebutton bounds(482, 110, 75, 20), channel("presets1"), populate("*.snaps"), text("Load", "Load")
+combobox bounds(464, 42, 115, 30), channel("presets2"), populate("*.snaps"), text("Presets")
 
 // Master gain
 vslider bounds(481, 170, 80, 178), channel("gain"), range(0, 1, 0.5, 1, 0.01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
@@ -45,10 +45,10 @@ rslider bounds(242, 170, 50, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1
 rslider bounds(192, 170, 50, 50), channel("distortion"), range(0, 1, 0, 1, .01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour("black")
 
 // ADSR
-rslider bounds(16, 170, 50, 50), channel("attack"), range(0, 1, 0.1, 1, 0.01), text("A"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(58, 170, 50, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("D"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(100, 170, 50, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("S"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(142, 170, 50, 50), channel("release"), range(0, 1, 0.1, 1, 0.01), text("R"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(16, 170, 50, 50), channel("attack"), range(0, 1, 0.1, 1, 0.01), text("Attack"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(58, 170, 50, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("Decay"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(100, 170, 50, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("Sustain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(142, 170, 50, 50), channel("release"), range(0, 1, 0.1, 1, 0.01), text("Release"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 
 // Delay
 rslider bounds(63, 250, 50, 50), channel("delWet"), range(0, .9, 0, 1, 0.001), text("Dry/Wet"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
@@ -56,12 +56,9 @@ rslider bounds(30, 300, 50, 50), channel("delay"), range(1, 2000, 500, 1, 1), te
 rslider bounds(96, 300, 50, 50), channel("delFeed"), range(0, 0.99, 0.5, 1, 0.01), text("Feedback"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 
 // Octaver
-rslider bounds(320, 170, 50, 50), channel("octDown1"), range(0, 4, 0, 1, 2), text("OctDown1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(320, 234, 50, 50), channel("octDown2"), range(0, 4, 0, 1, 2), text("OctDown2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(320, 296, 50, 50), channel("octDown3"), range(0, 4, 0, 1, 2), text("OctDown3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(384, 172, 50, 50), channel("octUp1"), range(0, 4, 0, 1, 2), text("OctUp1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(384, 234, 50, 50), channel("octUp2"), range(0, 4, 0, 1, 2), text("OctUp2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
-rslider bounds(384, 296, 50, 50), channel("octUp3"), range(0, 4, 0, 1, 2), text("OctUp3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(350, 172, 60, 50), channel("octave1"), range(-4, 4, 0, 1, 2), text("Oscillator 1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(350, 234, 60, 50), channel("octave2"), range(-4, 4, 0, 1, 2), text("Oscillator 2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
+rslider bounds(350, 296, 60, 50), channel("octave3"), range(-4, 4, 0, 1, 2), text("Oscillator 3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
 
 // Reverb
 rslider bounds(176, 302, 50, 50), channel("revCut"), range(1, 21000, 12000, 1, 10), text("Cut Off"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255)
@@ -74,7 +71,7 @@ rslider bounds(240, 250, 50, 50), channel("wetR"), range(0, 1, 0, 1, .01), text(
 <CsoundSynthesizer>
 
 <CsOptions>
-    -n -d -odac0  -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 -b128 -B256 -+rtmidi=NULL
+    -n -d -odac0 -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 -b128 -B256 -+rtmidi=NULL
 </CsOptions>
 
 
@@ -125,12 +122,9 @@ instr 1
     kTune2   chnget  "detune2"
     kTune3   chnget  "detune3"
 
-    kOctD1   chnget  "octDown1"
-    kOctD2   chnget  "octDown2"
-    kOctD3   chnget  "octDown3"
-    kOctU1   chnget  "octUp1"
-    kOctU2   chnget  "octUp2"
-    kOctU3   chnget  "octUp3"
+    kOctave1 chnget  "octave1"
+    kOctave2 chnget  "octave2"
+    kOctave3 chnget  "octave3"
 
     iCps     cpsmidi
     iAmp     ampmidi  0.2
@@ -139,36 +133,30 @@ instr 1
     kAdsr  madsr  iAtt, iDec, iSus, iRel
     kAmp = iAmp + kAdsr
 
-    // Under generering av tonene sjekkes det om noen skal transponeres opp eller ned
+    // Under generering av tonene sjekkes det om noen av oscillatorene skal transponeres opp eller ned
     // Oscillator 1
-    if kOctD1 > 0 && kOctU1 == 0 then
-        aOscil1 oscilikt iAmp, (iCps + kTune1) / kOctD1, kWave1
-    elseif kOctD1 == 0 && kOctU1 > 0 then 
-        aOscil1 oscilikt iAmp, (iCps + kTune1) * kOctU1, kWave1
-    elseif kOctD1 > 0 && kOctU1 > 0 then 
-        aOscil1 oscilikt iAmp, ((iCps * kOctU1) / kOctD1) + kTune1, kWave1
+    if kOctave1 > 0 then
+        aOscil1 oscilikt iAmp, (iCps + kTune1) * kOctave1, kWave1
+    elseif kOctave1 < 0 then 
+        aOscil1 oscilikt iAmp, (iCps + kTune1) / abs(kOctave1), kWave1
     else
         aOscil1 oscilikt iAmp, iCps + kTune1, kWave1
     endif
-
+    
     // Oscillator 2
-    if kOctD2 > 0 && kOctU2 == 0 then
-        aOscil2 oscilikt iAmp, (iCps + kTune2) / kOctD2, kWave2
-    elseif kOctD2 == 0 && kOctU2 > 0 then 
-        aOscil2 oscilikt iAmp, (iCps + kTune2) * kOctU2, kWave2
-    elseif kOctD2 > 0 && kOctU2 > 0 then 
-        aOscil2 oscilikt iAmp, ((iCps * kOctU2) / kOctD2) + kTune2, kWave2
+    if kOctave2 > 0 then
+        aOscil2 oscilikt iAmp, (iCps + kTune2) * kOctave2, kWave2
+    elseif kOctave2 < 0 then 
+        aOscil2 oscilikt iAmp, (iCps + kTune2) / abs(kOctave2), kWave2
     else
         aOscil2 oscilikt iAmp, iCps + kTune2, kWave2
     endif
-
+    
     // Oscillator 3
-    if kOctD3 > 0 && kOctU3 == 0 then
-        aOscil3 oscilikt iAmp, (iCps / kOctD3) + kTune3, kWave3
-    elseif kOctD3 == 0 && kOctU3 > 0 then 
-        aOscil3 oscilikt iAmp, (iCps * kOctU3) + kTune3, kWave3
-    elseif kOctD3 > 0 && kOctU3 > 0 then 
-        aOscil3 oscilikt iAmp, ((iCps * kOctU3) / kOctD3) + kTune3, kWave3
+    if kOctave3 > 0 then
+        aOscil3 oscilikt iAmp, (iCps + kTune3) * kOctave3, kWave3
+    elseif kOctave3 < 0 then 
+        aOscil3 oscilikt iAmp, (iCps + kTune3) / abs(kOctave3), kWave3
     else
         aOscil3 oscilikt iAmp, iCps + kTune3, kWave3
     endif
