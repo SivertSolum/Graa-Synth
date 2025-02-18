@@ -1,5 +1,5 @@
 <Cabbage>
-form caption("Graa Synth"), size(605, 505), colour(200, 200, 200), pluginId("def1"), style("flat")
+form caption("Graa Synth"), size(605, 505), colour(200, 200, 200), pluginId("def1")
 
 // Keyboard
 keyboard bounds(14, 356, 576, 134), middleC(3), keyWidth(25), value(48), scrollbars(0), mouseOverKeyColour(100, 100, 100, 255)
@@ -28,8 +28,8 @@ rslider bounds(526, 82, 64, 55), channel("octave3"), range(-4, 4, 0, 1, 2), text
 // ADSR
 groupbox bounds(14, 143, 320, 82), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("ADSR")
 rslider bounds(14, 166, 64, 50), channel("attack"), range(0, 1, 0.1, 1, 0.01), text("Attack"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Attack => ")
-rslider bounds(103, 166, 64, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("Decay"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Decay => ")
-rslider bounds(167, 166, 64, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("Sustain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Sustain => ")
+rslider bounds(100, 166, 64, 50), channel("decay"), range(0, 1, 0.4, 1, 0.01), text("Decay"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Decay => ")
+rslider bounds(184, 166, 64, 50), channel("sustain"), range(0, 1, 0.2, 1, 0.01), text("Sustain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Sustain => ")
 rslider bounds(270, 166, 64, 50), channel("release"), range(0, 1, 0.1, 1, 0.01), text("Release"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Release => ")
 
 // WIP
@@ -50,8 +50,9 @@ rslider bounds(259, 302, 64, 50), channel("feed"), range(0, 0.99, 0.7, 1, .01), 
 
 // Low-Pass & Distortion
 groupbox bounds(334, 225, 160, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Distortion & LP-Filter")
-rslider bounds(434, 294, 64, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1), text("LP Filter"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Low-Pass Cutoff Frequency => ")
-rslider bounds(344, 294, 64, 50), channel("distortion"), range(0, 1, 0, 1, 0.01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Distortion Level => ")
+rslider bounds(422, 302, 64, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1), text("LP Filter"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Low-Pass Cutoff Frequency => ")
+rslider bounds(344, 302, 64, 50), channel("distortion"), range(0, 1, 0, 1, 0.01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Distortion Level => ")
+button bounds(348, 268, 54, 25), channel("distortionRand"), text("?"), range(0, 1, 0, 1, 0.01)
 
 // Master gain
 groupbox bounds(494, 143, 96, 213), colour(80, 80, 80, 255), fontColour(0, 0, 0, 255), text("Master")
@@ -148,7 +149,7 @@ instr 1
         aOscil3 oscilikt iAmp, iCps + kTune3, kWave3
     endif
 
-    // Adds the signal from all three oscillators to master variable, gain is controlled by the individual GUI volume controls 
+    // Adds the signal from all three oscillators to master variable, gain is controlled by the individual GUI volume-controls 
     aMaster = (((aOscil1 * kOscilGain1) + (aOscil2 * kOscilGain2) + (aOscil3 * kOscilGain3)) / 3) * kAmp
 
     aDistort distort aMaster, kDist, giDist
