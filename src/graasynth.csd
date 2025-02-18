@@ -1,7 +1,7 @@
 <Cabbage> bounds(0, 0, 0, 0)
 form caption("Graa Synth") size(600, 460), colour(200, 200, 200), pluginId("def1")
 
-// Moduler
+// GUI Modules
 groupbox bounds(14, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 1")
 groupbox bounds(160, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 2")
 groupbox bounds(306, 14, 146, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 3")
@@ -74,7 +74,6 @@ rslider bounds(240, 250, 50, 50), channel("wetR"), range(0, 1, 0, 1, .01), text(
     -n -d -odac0 -M0 -m0d --midi-key-cps=4 --midi-velocity-amp=5 -b128 -B256 -+rtmidi=NULL
 </CsOptions>
 
-
 <CsInstruments>
 
 // Init
@@ -83,26 +82,26 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 
-// Globale variabler for lydlagring
+// Globale variables for storing audio
 gaMaster init  0
 gaPass   init  0
 gaDelay  init  0
 gaRevL   init  0
 gaRevR   init  0
 
-// Funksjonstabeller for ocsillator-bølgeformer => Sine, Saw, Square, Triangle
+// Function tables for ocsillator waveforms => Sine, Saw, Square, Triangle
 giSine	 ftgen	1, 0, 4096, 10, 1
 giSaw	 ftgen	2, 0, 4096, 10, 1, 1/2, 1/3, 1/4, 1/5,  1/6, 1/7,  1/8, 1/9,  1/10, 1/11
 giSquar  ftgen	3, 0, 4096, 10, 1, 0,   1/3, 0,   1/5,  0,   1/7,  0,   1/9,  0,    1/11
 giTri	 ftgen	4, 0, 4096, 10, 1, 0,   1/9, 0,   1/25, 0,   1/49, 0,   1/81, 0,    1/121
 
-// Funksjonstabell for distortion
+// Function table for distortion
 giDist	 ftgen	5, 0, 257,  9, .5, 1,   270
 
 
-// ----- HOVEDINSTRUMENT -----
+// ----- MAIN -----
 instr 1
-    // Importerer informasjonen fra sliderene
+    // Import data from sliders
     iAtt     chnget  "attack"
     iDec     chnget  "decay"
     iSus     chnget  "sustain"
@@ -129,12 +128,11 @@ instr 1
     iCps     cpsmidi
     iAmp     ampmidi  0.2
 
-    // Lager felles envelope for de tre oscillatorene
+    // Create one common ADSR/Envelope for all three oscillators
     kAdsr  madsr  iAtt, iDec, iSus, iRel
     kAmp = iAmp + kAdsr
 
-    // Under generering av tonene sjekkes det om noen av oscillatorene skal transponeres opp eller ned
-    // Oscillator 1
+    // Checks and sets which octave each oscillator is set to
     if kOctave1 > 0 then
         aOscil1 oscilikt iAmp, (iCps + kTune1) * kOctave1, kWave1
     elseif kOctave1 < 0 then 
@@ -143,7 +141,6 @@ instr 1
         aOscil1 oscilikt iAmp, iCps + kTune1, kWave1
     endif
     
-    // Oscillator 2
     if kOctave2 > 0 then
         aOscil2 oscilikt iAmp, (iCps + kTune2) * kOctave2, kWave2
     elseif kOctave2 < 0 then 
@@ -152,7 +149,6 @@ instr 1
         aOscil2 oscilikt iAmp, iCps + kTune2, kWave2
     endif
     
-    // Oscillator 3
     if kOctave3 > 0 then
         aOscil3 oscilikt iAmp, (iCps + kTune3) * kOctave3, kWave3
     elseif kOctave3 < 0 then 
@@ -161,7 +157,7 @@ instr 1
         aOscil3 oscilikt iAmp, iCps + kTune3, kWave3
     endif
 
-    // Legger det samlede signalet fra alle oscillatorene sammen, med individuell volumkontroll
+    // Adds together the signal from all three oscillators, controlled by the individual GUI volume controls 
     aMaster = (((aOscil1 * kOscilGain1) + (aOscil2 * kOscilGain2) + (aOscil3 * kOscilGain3)) / 3) * kAmp
 
     aDistort distort aMaster, kDist, giDist
@@ -175,7 +171,7 @@ instr 10
     kDelay chnget  "delay"
     kFeedb chnget  "delFeed"
 
-    // Delay med makstid = 10000ms
+    // Delay with a max time of 10000ms
     aDel vdelay gaMaster + aFeed, kDelay, 10000
     aFeed = aDel * kFeedb
 
@@ -206,16 +202,17 @@ instr 99
     kRevL chnget "wetL"
     kRevR chnget "wetR"
 
-    // Henter inn lydinformasjonen fra de globale variablene
     aMaster = gaMaster
     aDel = gaDelay
     aRevL = gaRevL
     aRevR = gaRevR
 
-    // Legger sammen lydsignalene for prosessering gjennom low pass filter
+    // Low-pass filter
     aTot = (aDel * kWet) + aMaster
     aPass butterlp aTot, kCut
-    outs (aPass + aRevL) * (kGain - kRevL), (aPass + aRevR) * (kGain - kRevR)
+    
+    // Output
+    outs (aPass + aRevL) * abs(kGain - kRevL), (aPass + aRevR) * abs(kGain - kRevR)
 
     // Reset global variables to avoid feedback
     gaMaster = 0
