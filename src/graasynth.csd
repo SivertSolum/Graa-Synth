@@ -52,7 +52,7 @@
     groupbox bounds(334, 225, 160, 130), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Distortion & LP-Filter")
     rslider bounds(422, 302, 64, 50), channel("cutoff"), range(1, 20000, 20000, 1, 1), text("LP Filter"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Low-Pass Cutoff Frequency => ")
     rslider bounds(344, 302, 64, 50), channel("distortion"), range(0, 1, 0, 1, 0.01), text("Distortion"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Distortion Level => ")
-    button bounds(348, 268, 54, 25), channel("distortionRand"), text("?"), range(0, 1, 0, 1, 0.01)
+    //button bounds(348, 268, 54, 25), channel("distortionRand"), text("?"), range(0, 1, 0, 1, 0.01)
 
     // Master gain
     groupbox bounds(494, 143, 96, 213), colour(80, 80, 80, 255), fontColour(0, 0, 0, 255), text("Master")
