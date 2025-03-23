@@ -8,21 +8,21 @@
     groupbox bounds(14, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 1")
     combobox bounds(30, 42, 160, 30), channel("wave1"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
     rslider bounds(14, 82, 64, 55), channel("osGain1"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Gain => ")
-    rslider bounds(78, 82, 64, 55), channel("detune1"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Detune => ")
+    rslider bounds(78, 82, 64, 55), channel("detune1"), range(0, 200, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Detune => ")
     rslider bounds(142, 82, 64, 55), channel("octave1"), range(-4, 4, 0, 1, 2), text("Oscillator 1"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 1 Octave => ")
 
     // Oscillator 2
     groupbox bounds(206, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 2")
     combobox bounds(222, 42, 160, 30), channel("wave2"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
     rslider bounds(206, 82, 64, 55), channel("osGain2"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Gain => ")
-    rslider bounds(270, 82, 64, 55), channel("detune2"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Detune => ")
+    rslider bounds(270, 82, 64, 55), channel("detune2"), range(0, 200, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Detune => ")
     rslider bounds(334, 82, 64, 55), channel("octave2"), range(-4, 4, 0, 1, 2), text("Oscillator 2"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 2 Octave => ")
 
-    // Oscillator 3
+    // Oscillator 3 
     groupbox bounds(398, 14, 192, 129), colour(100, 100, 100, 255), fontColour(0, 0, 0, 255), text("Oscillator 3")
     combobox bounds(414, 42, 160, 30), channel("wave3"), text("Waveform"), items("Sine", "Saw", "Square", "Triangle"), value(1)
     rslider bounds(398, 82, 64, 55), channel("osGain3"), range(0, 1, 0.5, 1, .01), text("Gain"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Gain => ")
-    rslider bounds(462, 82, 64, 55), channel("detune3"), range(0, 100, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Detune => ")
+    rslider bounds(462, 82, 64, 55), channel("detune3"), range(0, 200, 0, 1, 1), text("Detuner"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Detune => ")
     rslider bounds(526, 82, 64, 55), channel("octave3"), range(-4, 4, 0, 1, 2), text("Oscillator 3"), trackerColour(0, 255, 0, 155), outlineColour(0, 0, 0, 50), textColour(0, 0, 0, 255), popupPrefix("Oscillator 3 Octave => ")
 
     // ADSR
